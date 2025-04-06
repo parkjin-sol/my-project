@@ -1,24 +1,33 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './include/Header'
-import Footer from './include/Footer'
-import MainTop from './component/details/MainTop'
-import MainBottom from './component/details/MainBottom'
-
+import { AuthProvider } from "./context/AuthContext";
+import { Route, Routes } from "react-router-dom";
+import Header from "./component/Common/Include/Header";
+import Footer from "./component/Common/Include/Footer";
+import Home from "./component/Common/Home/Home";
+import "./App.css";
+import BirdList from "./component/Birds/BirdList";
+import BirdDetails from "./component/Birds/BirdDetails";
+import SignUp from "./component/Common/Member/SignUp";
+import Login from "./component/Common/Member/Login";
+import MyPage from "./component/Common/Member/MyPage";
+import BoardList from "./component/Board/BoardList";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <Header />
-        <div className='container'>
-          <h1 className='main-title'>BIRDS WATCHER</h1>
-          <MainTop />
-          <MainBottom/>
-        </div>
-      <Footer/>
+      <AuthProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sub" element={<BirdList />} />
+          <Route path="/sub/:title" element={<BirdDetails />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/log-in" element={<Login />} />
+          <Route path="/my-page" element={<MyPage />} />
+          <Route path="/boards" element={<BoardList />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

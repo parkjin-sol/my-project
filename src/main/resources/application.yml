@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: bird
+  datasource:
+    url: jdbc:oracle:thin:@112.221.156.34:12345:xe
+    username: KH11_PJS
+    password: KH1234
+    driver-class-name: oracle.jdbc.OracleDriver
+  profiles:              
+    include: private
+
+server:
+  port: 80

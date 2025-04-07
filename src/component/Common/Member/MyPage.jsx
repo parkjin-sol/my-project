@@ -48,7 +48,9 @@ function MyPage() {
         </p>
       </div>
       <div className="mypage-btn-wrap">
-        <button className="logout-btn">로그아웃</button>
+        <button className="logout-btn" onClick={handleLogout}>
+          로그아웃
+        </button>
         <button className="delete-btn">회원 탈퇴</button>
       </div>
     </div>

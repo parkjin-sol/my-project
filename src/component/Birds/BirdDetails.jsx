@@ -37,17 +37,17 @@ function BirdDetails() {
       </div>
 
       <div className="view-comments">
-        <h3>💬 댓글</h3>
+        <h3>댓글 (3) </h3>
         <form className="comment-form">
           <input type="text" placeholder="댓글을 입력하세요" />
           <button type="submit">등록</button>
         </form>
         <ul className="comment-list">
           <li>
-            <strong>버드유저1:</strong> 부엉이는 정말 멋져요!
+            <strong>버드유저1</strong> 부엉이는 정말 멋져요!
           </li>
           <li>
-            <strong>새박사:</strong> 좋은 기사 감사합니다 😊
+            <strong>새박사</strong> 좋은 기사 감사합니다 😊
           </li>
         </ul>
       </div>

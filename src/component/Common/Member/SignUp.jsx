@@ -23,7 +23,7 @@ const SignUp = () => {
       if (res.status === 201) {
         alert("회원가입에 성공했습니다! 이제 로그인해주세요~");
         setTimeout(() => {
-          navi("/login"); // 👈 로그인 페이지로 이동
+          navigate("/log-in"); // 로그인 페이지로 이동
         }, 1000);
       }
     } catch (err) {

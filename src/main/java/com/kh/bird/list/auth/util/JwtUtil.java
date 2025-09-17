@@ -18,20 +18,13 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @Slf4j
 public class JwtUtil {
-	
-	// 애플리케이션 설정파일(application.properties, application.yaml)에 정의된
-		//속성의 값들을 클래스 내부에서 불러서 사용하고 싶다!
+
 		@Value("${jwt.secret}")
 		private String secretKey;
 		private SecretKey key;
 		
-		{
-			// log.info("{}", secretKey);
-		}
-		
 		@PostConstruct
 		public void init() {
-			//log.info("{}", secretKey);
 			byte[] keyArr = Base64.getDecoder().decode(secretKey);
 			this.key = Keys.hmacShaKeyFor(keyArr);
 			
